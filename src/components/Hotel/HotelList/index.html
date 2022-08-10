@@ -1,14 +1,19 @@
 <div class="container">
-  <p class="title-search">Plaza Vilamoura</p>
-  <p class="count-results">2531 results</p>
+  <p class="font-bold text-3xl">Plaza Vilamoura</p>
+  <p class="font-normal text-base">{{productTotal || 0}} results</p>
 
-  <div class="flex flex-wrap">
-    <tui-hotel-item v-for="index in 10" :key="index"></tui-hotel-item>
+  <div class="flex flex-wrap mt-8">
+    <tui-hotel-item
+      v-for="(item, index) in productList"
+      :key="index"
+      :product="item"
+    ></tui-hotel-item>
   </div>
 
   <div class="flex justify-center mt-10">
     <button
       class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+      @click="moreItens()"
     >
       Load more offers
     </button>
