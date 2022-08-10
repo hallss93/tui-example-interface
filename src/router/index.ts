@@ -8,7 +8,7 @@ const routes: Array<RouteConfig> = [
     path: "/",
     name: "home",
     component: () =>
-      import(/* webpackChunkName: "HomeView" */ "../views/HomeView.vue"),
+      import(/* webpackChunkName: "Home" */ "../views/Home/index.vue"),
   },
 ];
 
