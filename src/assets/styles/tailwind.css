@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'TUITypeLt_LATN_W_Bd';
+    src: url('./../fonts/TUITypeLt_LATN_W_Bd.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'TUITypeLt_LATN_W_Rg';
+    src: url('./../fonts/TUITypeLt_LATN_W_Rg.woff2') format('woff2');
+}
+
+* {
+    font-family: "TUITypeLt_LATN_W_Rg";
+    color: #000000;
+}
