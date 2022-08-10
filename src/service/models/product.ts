@@ -24,7 +24,7 @@ export default {
   }): Promise<ResponseAPI<IProduct[]>> => {
     return await api.get(
       `${URL.PRODUCT_SEARCH}/${params.toParamns([
-        { adults, duration, $sort, $limit, $skip, $total, $market,hotelName:"Claris" },
+        { adults, duration, $sort, $limit, $skip, $total, $market },
       ])}`
     );
   },
