@@ -1,7 +1,10 @@
 <div id="app" class="bg-tui-background">
   <tui-header></tui-header>
   <div class="flex mt-10">
-    <tui-filter class="ml-10 mr-10"></tui-filter>
-    <router-view class="container ml-10 mr-10"/>
+    <tui-filter
+      class="ml-10 mr-10"
+      v-if="$mq !== 'mobile' && $mq !== 'tablet' "
+    ></tui-filter>
+    <router-view class="ml-3" />
   </div>
 </div>

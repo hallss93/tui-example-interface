@@ -1,13 +1,17 @@
 <div class="flex-none hotel-card">
   <div class="rounded shadow-sm">
-    <div class="flex">
+    <div class="flex" :class="{'flex-wrap':$mq ==='mobile' || $mq ==='tablet'}">
       <img
-        class="w-full hotel-img"
+        class="w-full"
+        :class="{'hotel-img':$mq !=='mobile' && $mq !=='tablet'}"
         src="https://cloud.tui.com/pics/hotels/size:1600/aHR0cDovL3RraW1hZ2VzLmF4aXNkYXRhLm5ldC9JbWFnZUNvbnZlcnRlci5waHA/c2l6ZT1wcmludCZob3RlbD1BRVNCQ043R09XJmZpbGVuYW1lPTIwMTQxMTEzMTAwMDIzXzMwODAxNC5qcGc="
         alt="Sunset in the mountains"
       />
       <div class="flex flex-col flex-auto">
-        <div class="px-6 py-4 mb-4">
+        <div
+          class="px-6 py-4"
+          :class="{'mb-4':$mq !=='mobile' && $mq !=='tablet'}"
+        >
           <p class="text-base hotel-name text-blue font-bold text-2xl">
             {{product.hotelName}}
           </p>
@@ -43,8 +47,12 @@
             </span>
           </div>
         </div>
-        <div class="px-6 py-4 flex justify-end">
+        <div
+          class="px-6 pb-4 flex justify-end"
+          :class="{'pt-4':$mq !=='mobile' && $mq !=='tablet','pt-1':$mq ==='mobile' || $mq ==='tablet'}"
+        >
           <button
+            v-if="$mq !=='mobile' && $mq !=='tablet'"
             class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
           >
             Check Hotel
