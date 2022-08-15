@@ -55,12 +55,39 @@
               </svg>
             </div>
             <input
+              v-model="keyword"
+              @keyup="searchSuggestion"
               type="search"
-              id="default-search"
               class="block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Find a hotel"
               required
             />
+          </div>
+          <div
+            v-if="showSuggestion"
+            class="destination-search__dialog-wrapper"
+            @click="showSuggestion = true"
+          >
+            <div class="suggestion-dialog destination-search__dialog">
+              <div class="suggestion-dialog__wrapper">
+                <div v-for="(s, sIndex) in suggestions" class="ml-3 mr-3">
+                  <span class="text-lg font-bold uppercase"> {{s.label}} </span>
+                  <ul class="suggestion-dialog__list-wrapper">
+                    <li
+                      v-for="(i, index) in s.items"
+                      :key="index"
+                      class="suggestion-dialog__list-item"
+                      @click="selected(s.label, i.label, i.value)"
+                    >
+                      <span
+                        class="suggestion-dialog__list-item-text"
+                        v-html="i.label"
+                      ></span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </form>
       </div>

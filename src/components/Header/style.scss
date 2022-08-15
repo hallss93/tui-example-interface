@@ -1,8 +1,64 @@
 form {
-    &.form-min {
-      width: 50%;
+  &.form-min {
+    width: 50%;
+  }
+  &.form-max {
+    width: 100%;
+  }
+}
+.destination-search__dialog-wrapper {
+  position: relative;
+  .destination-search__dialog {
+    max-height: calc(100vh - 200px);
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    &.suggestion-dialog {
+      border-radius: 2px;
+      border: solid 1px #cccccc;
+      box-shadow: #cccccc;
+      max-width: 750px;
     }
-    &.form-max {
-      width: 100%;
+    .suggestion-dialog__wrapper {
+      padding: 27px 0 50vh;
+      background-color: white;
+      .suggestion-dialog__list-wrapper {
+        padding: 0;
+        margin-top: 7px;
+        margin-bottom: 27px;
+        list-style-type: none;
+        .suggestion-dialog__list-item {
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          cursor: pointer;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-orient: horizontal;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+          flex-direction: row;
+          max-height: -webkit-fit-content;
+          max-height: -moz-fit-content;
+          max-height: fit-content;
+          min-height: 32px;
+          padding-left: 9px;
+        }
+        .suggestion-dialog__list-item-text {
+          font-size: 20px;
+          font-stretch: normal;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 24px;
+        }
+        em {
+          color: #a5a5a5;
+        }
+      }
     }
+  }
 }

@@ -1,0 +1,27 @@
+<div class="tui-filter">
+  <template v-if="suggestions && suggestions.length">
+    <div v-for="(s, sIndex) in suggestions" :key="sIndex">
+      <h6 class="text-xl font-bold mb-3 uppercase">{{s.label}}</h6>
+      <div class="flex items-start" v-for="(i, index) in s.items" :key="index">
+        <div class="flex items-center h-5 mb-2">
+          <input
+            :id="i.value"
+            :name="i.value"
+            type="checkbox"
+            class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
+          />
+        </div>
+        <div class="ml-3 text-sm">
+          <label
+            :for="i.value"
+            class="font-normal text-base"
+            v-html="i.label"
+          ></label>
+        </div>
+      </div>
+    </div>
+  </template>
+  <template v-else>
+    <h6 class="text-xl font-bold mb-3">Sugestões</h6>
+  </template>
+</div>

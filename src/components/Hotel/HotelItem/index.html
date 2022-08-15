@@ -9,10 +9,10 @@
       <div class="flex flex-col flex-auto">
         <div class="px-6 py-4 mb-4">
           <p class="text-base hotel-name text-blue font-bold text-2xl">
-            Crowne Plaza Vilamoura Algarve
+            {{product.hotelName}}
           </p>
           <div
-            class="flex items-center  text-base text-blue font-normal text-base"
+            class="flex items-center text-base text-blue font-normal text-base"
           >
             <!-- Icon Location -->
             <svg
@@ -37,7 +37,10 @@
                 stroke-linejoin="round"
               />
             </svg>
-            <span> &nbsp; Quarteira, Algarve, Portugal </span>
+            <span>
+              &nbsp; {{product.country.label}}, {{product.region.label}},
+              {{product.city.label}}
+            </span>
           </div>
         </div>
         <div class="px-6 py-4 flex justify-end">
@@ -46,7 +49,11 @@
           >
             Check Hotel
           </button>
-          <p class="text-5xl font-bold text-blue ml-6">€40 <span class="text-base font-normal text-blue">/ Total</span></p>
+          <p class="text-5xl font-bold text-blue ml-6">
+            {{formatNumber(product.perPerson.totalPrice.currency,
+            product.perPerson.totalPrice.amount)}}
+            <span class="text-base font-normal text-blue">/ Total</span>
+          </p>
         </div>
       </div>
     </div>

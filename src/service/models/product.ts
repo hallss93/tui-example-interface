@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any*/
 import ResponseAPI from "@/interfaces/Response";
-import { IProduct } from "@/store/product/state";
+import { IProduct, ISuggestion } from "@/store/product/state";
 import api from "./../index";
 import params from "./../params";
 import URL from "./../URLs";
@@ -13,6 +13,9 @@ export default {
     $skip = 0,
     $total = 100000,
     $market = "tui-br",
+    city,
+    region,
+    ref,
   }: {
     adults: number;
     duration: number;
@@ -21,10 +24,38 @@ export default {
     $skip: number;
     $total: number;
     $market: string;
+    city?: number;
+    region?: number;
+    ref?: string;
   }): Promise<ResponseAPI<IProduct[]>> => {
     return await api.get(
       `${URL.PRODUCT_SEARCH}/${params.toParamns([
-        { adults, duration, $sort, $limit, $skip, $total, $market },
+        {
+          adults,
+          duration,
+          $sort,
+          $limit,
+          $skip,
+          $total,
+          $market,
+          city,
+          region,
+          ref,
+        },
+      ])}`
+    );
+  },
+  getSuggestions: async ({
+    keyword,
+  }: {
+    keyword: string;
+  }): Promise<ResponseAPI<ISuggestion[]>> => {
+    return await api.get(
+      `${URL.PRODUCT_SUGGESTION}/${params.toParamns([
+        {
+          keyword,
+          $market: "tui-br",
+        },
       ])}`
     );
   },

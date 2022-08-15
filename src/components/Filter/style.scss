@@ -1,0 +1,9 @@
+.tui-filter {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 320px;
+  height: calc(100vh - 290px);
+  background: white;
+  padding: 32px 24px;
+}

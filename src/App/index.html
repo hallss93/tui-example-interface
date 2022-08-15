@@ -1,4 +1,7 @@
-<div id="app">
+<div id="app" class="bg-tui-background">
   <tui-header></tui-header>
-  <router-view />
+  <div class="flex mt-10">
+    <tui-filter class="ml-10 mr-10"></tui-filter>
+    <router-view class="container ml-10 mr-10"/>
+  </div>
 </div>

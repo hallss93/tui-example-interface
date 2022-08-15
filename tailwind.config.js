@@ -11,6 +11,8 @@ module.exports = {
       },
       colors: {
         "tui-grey": "#9B9B9B",
+        "tui-span-light": "#818181",
+        "tui-background": "#f5f5f5",
         blue: {
           DEFAULT: "#092a5e",
           100: "#092a5e",

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { IProduct, IStateProduct } from "@/store/product/state";
 import { Component, Vue } from "vue-property-decorator";
 import TuiHotelItem from "../HotelItem/index.vue";
@@ -28,6 +29,9 @@ export default class TuiHotelList extends Vue {
   }) => ResponseAPI<IPaginationProducts<IProduct[]>>;
 
   /* States */
+
+  @State((state: IStateProduct) => state.products.suggestion_selected)
+  suggestion_selected!: any;
 
   @State((state: IStateProduct) => state.products.productList)
   productList!: IProduct[];

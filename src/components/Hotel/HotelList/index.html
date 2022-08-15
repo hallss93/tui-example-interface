@@ -1,5 +1,9 @@
 <div class="container">
-  <p class="font-bold text-3xl">Plaza Vilamoura</p>
+  <p
+    class="font-bold text-3xl"
+    v-if="suggestion_selected"
+    v-html="suggestion_selected.label"
+  ></p>
   <p class="font-normal text-base">{{productTotal || 0}} results</p>
 
   <div class="flex flex-wrap mt-8">
