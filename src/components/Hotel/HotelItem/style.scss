@@ -1,13 +1,14 @@
-
-.hotel-card {
-  width: 100%;
-  background-color: white;
-  margin-bottom: 8px;
-  .hotel-img {
+.tui-hotel {
+  &__card {
+    width: 100%;
+    background-color: white;
+    margin-bottom: 8px;
+  }
+  &__img {
     width: 375px;
   }
 
-  .hotel-name {
+  &__name {
     padding-bottom: 10px;
   }
 }

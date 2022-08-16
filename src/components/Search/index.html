@@ -30,22 +30,22 @@
   </div>
   <div
     v-if="showSuggestion"
-    class="destination-search__dialog-wrapper"
+    class="tui-destination-search"
     @click="showSuggestion = true"
   >
-    <div class="suggestion-dialog destination-search__dialog">
-      <div class="suggestion-dialog__wrapper">
+    <div class="tui-suggestion-dialog tui-destination-search__dialog">
+      <div class="tui-suggestion-dialog__wrapper">
         <div v-for="(s, sIndex) in suggestions" class="ml-3 mr-3">
           <span class="text-lg font-bold uppercase"> {{s.label}} </span>
-          <ul class="suggestion-dialog__list-wrapper">
+          <ul class="tui-suggestion-dialog__wrapper__list">
             <li
               v-for="(i, index) in s.items"
               :key="index"
-              class="suggestion-dialog__list-item"
+              class="tui-suggestion-dialog__wrapper__list__item"
               @click="selected(s.label, i.label, i.value)"
             >
               <span
-                class="suggestion-dialog__list-item-text"
+                class="tui-suggestion-dialog__wrapper__list__item__text"
                 v-html="i.label"
               ></span>
             </li>

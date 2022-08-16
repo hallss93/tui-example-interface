@@ -1,11 +1,11 @@
 .tui-subheader {
   height: 100vh;
 
-  .tui_subheader__border__top {
+  &__border__top {
     border-top: solid 1px rgba(0, 0, 0, 0.2);
   }
 
-  .tui_subheader__border__bottom {
+  &__border__bottom {
     border-bottom: solid 1px rgba(0, 0, 0, 0.2);
   }
 }
