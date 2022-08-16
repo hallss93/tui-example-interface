@@ -4,11 +4,12 @@ export default {
     let link = "";
     if (params && params.length > 0)
       for (const key in params[0]) {
-        if (link !== "") {
-          link += "&";
+        if (empty || (!empty && params[0][key] != undefined)) {
+          if (link !== "") {
+            link += "&";
+          }
+          link += key + "=" + params[0][key];
         }
-        if (empty) link += key + "=" + params[0][key];
-        else if (!empty && params[0][key]) link += key + "=" + params[0][key];
       }
     return `?${link}`;
   },

@@ -18,7 +18,6 @@ export default {
       $limit = 15,
       $skip = 0,
       $total = 100000,
-      $market = "tui-br",
       reset = true,
       city,
       region,
@@ -30,7 +29,6 @@ export default {
       $limit: number;
       $skip: number;
       $total: number;
-      $market: string;
       reset?: boolean;
       city?: number;
       region?: number;
@@ -57,7 +55,6 @@ export default {
         $limit,
         $skip,
         $total,
-        $market,
         city,
         region,
         ref,

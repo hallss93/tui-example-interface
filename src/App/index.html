@@ -1,10 +1,60 @@
 <div id="app" class="bg-tui-background">
-  <tui-header></tui-header>
+  <tui-header @open-filter="isOpen=true"></tui-header>
   <div class="flex mt-10">
     <tui-filter
       class="ml-10 mr-10"
       v-if="$mq !== 'mobile' && $mq !== 'tablet' "
     ></tui-filter>
+    <aside
+      class="transform top-0 left-0 w-full bg-white fixed h-full overflow-auto ease-in-out transition-all duration-300 z-30"
+      :class="isOpen ? 'translate-x-0' : '-translate-x-full'"
+    >
+      <div class="flex flex-wrap content-between flex-wrap tui-subheader">
+        <div class="flex-1">
+          <div
+            class="flex align-center tui_subheader__border__bottom px-4 py-4"
+          >
+            <div class="mr-4 cursor-pointer" @click="isOpen=false">
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19 24L11 16L19 8"
+                  stroke="#9B9B9B"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <h6 class="text-xl text-tui-grey font-bold">Filter</h6>
+          </div>
+          <div class="mx-4 my-4 flex-auto">
+            <tui-filter :height="'auto'" noPadding></tui-filter>
+          </div>
+        </div>
+        <div class="flex-auto tui_subheader__border__top pt-4">
+          <button
+            @click="isOpen=false"
+            type="button"
+            class="bg-white rounded-md py-2 px-4 inline-flex items-center justify-center text-blue"
+          >
+            Clear
+          </button>
+          <button
+            @click="isOpen=false"
+            type="button"
+            class="bg-blue rounded-md py-2 px-4 inline-flex items-center justify-center text-white"
+          >
+            Apply
+          </button>
+        </div>
+      </div>
+    </aside>
     <router-view class="ml-3" />
   </div>
 </div>

@@ -1,4 +1,8 @@
-<div class="tui-filter">
+<div
+  class="tui-filter"
+  :style="{'height':height?height:'calc(100vh - 290px)'}"
+  :class="{noPadding:noPadding}"
+>
   <template v-if="suggestions && suggestions.length">
     <div v-for="(s, sIndex) in suggestions" :key="sIndex">
       <h6 class="text-xl font-bold mb-3 uppercase">{{s.label}}</h6>

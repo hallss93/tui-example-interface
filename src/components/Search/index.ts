@@ -44,7 +44,7 @@ export default class TuiSearch extends Vue {
   selected(label: string, lebalex: string, value: string): void {
     this.showSuggestion = false;
     this.suggestionSelected = value;
-    this.$emit('hidden')
+    this.$emit("hidden");
 
     const key = label === "hotel" ? "ref" : label;
     this.setSuggestionSelected({ [key]: value, label: lebalex });
@@ -57,5 +57,9 @@ export default class TuiSearch extends Vue {
     (document.querySelector("#app") as any).onclick = function () {
       that.showSuggestion = false;
     };
+
+    this.keyword = "Piauí";
+    this.searchSuggestion();
+    this.showSuggestion = false;
   }
 }
