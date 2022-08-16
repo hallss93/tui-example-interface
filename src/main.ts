@@ -5,6 +5,7 @@ import router from "./router";
 import store from "./store";
 import "./assets/styles/tailwind.css";
 import "./plugins/vue-mq";
+import "./plugins/tailwind";
 
 Vue.config.productionTip = false;
 
