@@ -45,7 +45,7 @@ export default class TuiHotelList extends Vue {
     this.getProducts({
       adults: 2,
       duration: 1,
-      $limit: 15,
+      $limit: 10,
       $skip: this.skip,
     });
   }
@@ -57,7 +57,7 @@ export default class TuiHotelList extends Vue {
     this.getProducts({
       adults: 2,
       duration: 1,
-      $limit: 15,
+      $limit: 10,
       $skip: this.skip,
       reset: false,
     });

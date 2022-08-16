@@ -131,7 +131,7 @@ export default {
     dispatch("GET_PRODUCTS", {
       adults: 1,
       duration: 1,
-      $limit: 15,
+      $limit: 10,
       $skip: 0,
     });
   },
