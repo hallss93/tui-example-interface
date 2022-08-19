@@ -35,7 +35,7 @@ export default {
           $limit,
           $skip,
           $total,
-          $market: "tui-br",
+          $market: "tui-pt",
           city,
           region,
           ref,
@@ -52,7 +52,7 @@ export default {
       `${URL.PRODUCT_SUGGESTION}/${params.toParamns([
         {
           keyword,
-          $market: "tui-br",
+          $market: "tui-pt",
         },
       ])}`
     );
